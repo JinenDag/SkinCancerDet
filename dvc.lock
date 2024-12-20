@@ -1,0 +1,46 @@
+schema: '2.0'
+stages:
+  2-model_init:
+    cmd: python3 src/model/Model.py
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: abbf37d979de20881b5c091e6c51ab15
+      size: 240
+    - path: src/model/Model.py
+      hash: md5
+      md5: adf43394686b3b48e86854505bd2c60e
+      size: 1054
+  3-model_training:
+    cmd: python3 src/model/ModelTraining.py
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: abbf37d979de20881b5c091e6c51ab15
+      size: 240
+    - path: src/model/ModelTraining.py
+      hash: md5
+      md5: c8a7b689c78b25cdc4f4a50a179175ce
+      size: 1652
+  3-model_validation:
+    cmd: python3 src/model/ModelValidation.py
+    deps:
+    - path: config.yaml
+      hash: md5
+      md5: abbf37d979de20881b5c091e6c51ab15
+      size: 240
+    - path: src/model/ModelValidation.py
+      hash: md5
+      md5: ee3f3df80ea4b3589b80534d0f513d20
+      size: 3005
+  3-model_testing:
+    cmd: python3 src/test/ModelTesting.py
+    deps:
+    - path: models/model.h5
+      hash: md5
+      md5: e93f723ec41b33bf7ae382ecf2f4bc9e
+      size: 5814840
+    - path: src/test/ModelTesting.py
+      hash: md5
+      md5: 623f8a66b7a3a4dd1260438edb3d29b1
+      size: 1210
