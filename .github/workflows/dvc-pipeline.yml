@@ -30,3 +30,16 @@ jobs:
       - name: DVC Pull Data
         run: |
           dvc pull -v
+
+      - name: Read file contents
+        id: read_file
+        uses: andstor/file-reader-action@v1
+        with:
+          path: "dvc.yaml"
+
+      - name: Reproduce DVC Pipeline
+        run: |
+          dvc repro
+          
+          
+
